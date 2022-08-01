@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Form-login</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+<input type="text" id="productName">
+<input type="text" id="price">
+<input type="text" id="number">
+<input type="text" id="img">
+<button onclick="createNewProduct()">Create</button>
+<br>
+<span id="numberOfProduct"></span>
+<table border="2px">
+    <tr>
+        <td>Name</td>
+        <td>Price</td>
+        <td>Number</td>
+        <td>IMG</td>
+        <td>Edit</td>
+        <td>Delete</td>
+    </tr>
+    <tbody id="listProduct">
+
+    </tbody>
+
+</table>
+<script>
+    class Product {
+        name;
+        price;
+        number;
+        img
+
+        constructor(name, price, number, img) {
+            this.name = name;
+            this.price = price;
+            this.number = number;
+            this.img = img;
+        }
+
+
+        get name() {
+            return this.name;
+        }
+
+        set name(value) {
+            this.name = value;
+        }
+
+        get price() {
+            return this.price;
+        }
+
+        set price(value) {
+            this.price = value;
+        }
+
+        get number() {
+            return this.number;
+        }
+
+        set number(value) {
+            this.number = value;
+        }
+    }
+</script>
+<script>
+    let products = [
+        new Product("Iphone 13", 28000, 30),
+        new Product("Macbook pro M2", 35000, 20),
+        new Product("Gaming....", 30000, 10)
+    ];
+    // C: Create
+    // R: Read (list, detail)
+    // U: Update
+    // D: Delete
+
+
+
+    //Ham hien thi danh sach
+    function showAllProducts() {
+        let content = "";
+        for (let i = 0; i < products.length; i++) {
+            content+= "  <tr>" +
+                "        <td>"+ products[i].name +"</td>" +
+                "        <td>"+ products[i].price +"</td>" +
+                "        <td>"+ products[i].number +"</td>" +
+                "        <td><img src='"+products[i].img+"'></td>" +
+                "        <td><button onclick='edit("+i+")'>Edit</button></td>" +
+                "        <td><button onclick='deleteByIndex("+i+")'>Delete</button></td>" +
+                "    </tr>"
+        }
+        //ghi lai bang innerHTML
+        document.getElementById("listProduct").innerHTML = content;
+        document.getElementById("numberOfProduct").innerText = products.length;
+    }
+    showAllProducts();
+    function createNewProduct() {
+        //b1: lay du lieu trong the input
+        let name = document.getElementById("productName").value;
+        let price = document.getElementById("price").value;
+        let number = document.getElementById("number").value;
+        let img = document.getElementById("img").value;
+        let newP = new Product(name, price, number, img);
+        //b2: them moi vao mang
+        products.push(newP);
+        //b3: Ve lai bang
+        showAllProducts();
+    }
+    //xoa theo index
+    function deleteByIndex(index) {
+        // xoa phan tu
+        products.splice(index, 1);
+        // in lai mang
+        showAllProducts();
+    }
+    function edit(index){
+        products[index] = prompt('nhap lai');
+        showAllProducts();
+    }
+</script>
+</body>
+</html>

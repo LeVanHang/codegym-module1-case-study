@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="web.css">
+
+</head>
+<body>
+<div class="slideshow-container">
+    <div class="mySlides fade">
+        <div class="numbertext">1/3</div>
+        <img src="img/an-chay-bao-ve-suc-khoe-va-keo-dai-tuoi-tho-6.jpg" style="width: 100%">
+        <div class="text">Ăn chay bảo vệ sức khỏe</div>
+    </div>
+    <div class="mySlides fade">
+        <div class="numbertext">2/3</div>
+        <img src="img/image3-1.png" style="width: 100%">
+        <div class="text">Thuần chay, thiền định kết nối với Vũ Trụ</div>
+    </div>
+    <div class="mySlide fade">
+        <div class="numbertext">3/3</div>
+        <img src="img/Loving_Hut_Slogan.jpg" style="width: 100%">
+        <div class="text">BeVegan make peace</div>
+    </div>
+    <a class="prev" onclick="plusSlides(-1)"><</a>
+    <a class="next" onclick="plusSlides(1)">></a>
+</div>
+<br>
+<div style="text-align: center">
+    <span class="dot" onclick="currentSlide(1)"></span>
+    <span class="dot" onclick="currentSlide(2)"></span>
+    <span class="dot" onclick="currentSlide(3)"></span>
+</div>
+
+<section>
+    <img src="img/loving.jpg" alt="Loving Hut Slider" style="max-height:100%; max-width:100%;">
+</section>
+<br/>
+<nav>
+    <ul>
+        <li><a href="#link">Trang chủ</a></li>
+        <li class="dropdown">
+        <a  class="dropdown">Sản phẩm</a>
+        <div class="dropdown-content">
+            <a href="#">Sản phẩm đông lạnh</a>
+            <a href="#">Sản phẩm khô</a>
+            <a href="#">Sản phẩm gia vị</a>
+            <a href="#">Sản phẩm khác</a>
+        </div>
+        <li><a href="#link">Giới thiệu</a></li>
+        <li><a href="#link">Tin tức</a></li>
+        <li><a href="HTML/address.html">Liên hệ</a></li>
+        <li><a href="HTML/web_dangnhap.html">Đăng nhập</a></li>
+        <li><a href="HTML/web_dangky.html">Đăng ký</a></li>
+        <li class="search">
+        Search
+        <div class="search-bar">
+            <form>
+                <input type="text" name="search" placeholder="Search..." onclick="search()">
+            </form>
+        </div>
+    </li>
+    </ul>
+</nav>
+<!--<article>-->
+<!--    <h1>How to be a wizard</h1>-->
+<!--    <ol>-->
+<!--        <li>Grow a long, majestic beard.</li>-->
+<!--        <li>Wear a tall, pointed hat.</li>-->
+<!--        <li>Have I mentioned the beard?</li>-->
+<!--    </ol>-->
+<!--    <footer>-->
+<!--        <p>© 2018 Gandalf</p>-->
+<!--    </footer>-->
+<!--</article>-->
+<div id="inputitem">
+<input type="text" id="productName">
+<input type="text" id="price">
+<input type="text" id="number">
+<input type="text" id="img">
+<button onclick="createNewProduct()">Create</button>
+</div>
+<br>
+<span id="numberOfProduct"></span>
+<table border="2px" >
+    <tr>
+        <td>Name</td>
+        <td>Price</td>
+        <td>Number</td>
+        <td>IMG</td>
+        <td>Edit</td>
+        <td>Delete</td>
+    </tr>
+    <tbody
+            id="listProduct">
+    </tbody>
+</table>
+<script src="web.js"></script>
+<script src="js/oop.js"></script>
+<script src="js/func.js"></script>
+</body>
+</html>
